@@ -100,11 +100,12 @@ function checkForMatch() {
   updateScore(-5); 
 }
 
-function updateScore(change) {
+function updateScore(change = 0) {
   score += change;
   if (score < 0) score = 0;
-  scoreEl.textContent = score;
+  scoreEl.textContent = `${score}`; 
 }
+
 
 function playSound(id) {
   const sound = document.getElementById(id);
