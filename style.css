@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #333;
+  padding: 10px;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 2rem;
+  color: #222;
+}
+
+.player-info input {
+  padding: 8px;
+  margin: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px;
+  max-width: 90%;
+}
+
+.controls {
+  margin: 10px;
+}
+
+select,
+button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+}
+
+button {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.stats {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.game-board {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+  grid-template-columns: repeat(4, 100px); 
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card .front {
+  background-color: #000000;
+  color: #fff;
+}
+
+.card .back {
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+#message {
+  font-size: 1.8rem;
+  color: #00aa00;
+  margin-top: 20px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ff00;
+  }
+  to {
+    text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .game-board {
+    grid-template-columns: repeat(4, 65px);
+  }
+
+  .card {
+    width: 65px;
+    height: 65px;
+  }
+
+  .card .front,
+  .card .back {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    font-size: 1rem;
+  }
+}
+
+/* Larger Phones & Small Tablets */
+@media (max-width: 768px) {
+  .game-board {
+    grid-template-columns: repeat(4, 80px);
+  }
+
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card .front,
+  .card .back {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Medium Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .game-board {
+    grid-template-columns: repeat(4, 90px);
+  }
+
+  .card {
+    width: 90px;
+    height: 90px;
+  }
+
+  .card .front,
+  .card .back {
+    font-size: 1.7rem;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  .game-board {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    max-width: 700px;
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card .front,
+  .card .back {
+    font-size: 2rem;
+  }
+}

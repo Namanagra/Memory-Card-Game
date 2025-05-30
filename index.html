@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Card Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>🎴 Memory Card Game 🎴</h1>
+
+  <div class="player-info">
+    <input type="text" id="playerName" placeholder="Enter your name" />
+  </div>
+
+  <div class="controls">
+    <select id="difficulty">
+      <option value="4">Easy (4x4)</option>
+      <option value="6">Medium (6x6)</option>
+      <option value="8">Hard (8x8)</option>
+    </select>
+    <button id="newGameBtn">🔁 New Game</button>
+  </div>
+
+  <div class="stats">
+    <span>👣 Moves: <span id="moveCount">0</span></span>
+    <span>⏱️ Time: <span id="timer">0s</span></span>
+    <span>🏆 Score: <span id="score">1000</span></span>
+  </div>
+
+  <div id="gameBoard" class="game-board"></div>
+  <div id="message" class="hidden">🎉 Congratulations! 🎉</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
