@@ -58,7 +58,6 @@ function startGame() {
   timer = setInterval(() => {
     seconds++;
     timerEl.textContent = `${seconds}s`;
-    updateScore(-1);
   }, 1000);
 }
 
@@ -95,9 +94,9 @@ function checkForMatch() {
       second.classList.remove('flipped');
       flippedCards = [];
     }, 800);
-  }
 
-  updateScore(-5); 
+    updateScore(-10); 
+  }
 }
 
 function updateScore(change = 0) {
